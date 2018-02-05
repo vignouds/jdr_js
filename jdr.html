@@ -14,47 +14,5 @@
 
 	<script src="jquery-3.3.1.js"></script>
 	<script src="jdr.js"></script>
-
-	<script>
-		$(function(){
-			$('#bossName').text(boss1.name);
-			$('#heroName').text(hero1.name);	
-			$('#bossLife').text(boss1.life);
-			$('#bossStrenght').text(boss1.strenght);
-			$('#heroLife').text(hero1.life);
-			$('#heroStrenght').text(hero1.strenght);
-
-			$('#btnAtk').click(function(){
-				if (hero1.life > boss1.strenght) 
-				{
-					if (boss1.life > hero1.strenght) 
-					{
-						boss1.life = boss1.life - hero1.strenght;
-						hero1.life = hero1.life - boss1.strenght;
-						$('#console').text("Vous attaquez " + boss1.name + " et lui infligez " + hero1.strenght + " point(s) de dégats.");
-						$('#console').append('<br>' + boss1.name + " vous attaque et vous inflige " + boss1.strenght + " point(s) de dégats !");
-						$('#bossLife').text(boss1.life);
-						$('#heroLife').text(hero1.life);
-					}
-					else
-					{
-						boss1.life = boss1.life - hero1.strenght;
-						hero1.life = hero1.life - boss1.strenght;
-						$('#bossLife').text(boss1.life);
-						$('#heroLife').text(hero1.life);
-						$('#console').text(boss1.name + " est mort. Vous avez gagné !");
-					}	
-				}
-				else
-				{
-					boss1.life = boss1.life - hero1.strenght;
-					hero1.life = hero1.life - boss1.strenght;
-					$('#bossLife').text(boss1.life);
-					$('#heroLife').text(hero1.life);
-					$('#console').text("Vous êtes mort !")
-				}							
-			});
-		});
-	</script>
 </body>
 </html>
