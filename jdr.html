@@ -5,6 +5,35 @@
 	<title>Jeu de rôle en Javascript</title>
 </head>
 <body>
+	<p>Bonjour <span id="heroName"></span>.<br>Votre ennemi est <span id="bossName"></span>.</p>
+	<p>Points de vie de l'ennemi : <span id="bossLife">0</span></p>
+	<p>Votre force : <span id="heroStrenght">0</span></p>
+	<p><button id="btnAtk">Attaquer</button></p>
+	<div id="console"></div>
+
+	<script src="jquery-3.3.1.js"></script>
 	<script src="jdr.js"></script>
+
+	<script>
+		$(function(){
+			$('#bossLife').text(boss1.life);
+			$('#heroStrenght').replaceWith(hero1.strenght);
+			$('#bossName').replaceWith(boss1.name);
+			$('#heroName').replaceWith(hero1.name);
+			$('#btnAtk').click(function(){
+				if (boss1.life>0) 
+				{
+					boss1.life = boss1.life - hero1.strenght;
+					$('#console').text("Vous attaquez " + boss1.name + " et lui infligez " + hero1.strenght + " point(s) de dégats.");
+					$('#console').append('<br>' + boss1.name + " possède maintenant " + boss1.life + " point(s) de vie.");
+					$('#bossLife').text(boss1.life);
+				}
+				else
+				{
+					$('#console').text(boss1.name + " est mort. Vous avez gagné !");
+				}				
+			});
+		});
+	</script>
 </body>
 </html>
