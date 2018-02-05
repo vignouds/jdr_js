@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Jeu de rôle en Javascript</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<p>Bonjour <span id="heroName"></span>.<br>Votre ennemi est <span id="bossName"></span>.</p>
+	<p>Bonjour <strong><span id="heroName"></span></strong>.<br>Votre ennemi est <strong><span id="bossName"></span></strong>.</p>
 	<p>Points de vie de l'ennemi : <span id="bossLife">0</span></p>
 	<p>Votre force : <span id="heroStrenght">0</span></p>
 	<p><button id="btnAtk">Attaquer</button></p>
@@ -21,7 +22,7 @@
 			$('#bossName').replaceWith(boss1.name);
 			$('#heroName').replaceWith(hero1.name);
 			$('#btnAtk').click(function(){
-				if (boss1.life>0) 
+				if (boss1.life>1) 
 				{
 					boss1.life = boss1.life - hero1.strenght;
 					$('#console').text("Vous attaquez " + boss1.name + " et lui infligez " + hero1.strenght + " point(s) de dégats.");
