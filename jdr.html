@@ -6,11 +6,26 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<p>Bonjour <strong><span id="heroName"></span></strong>.<br>Votre ennemi est <strong><span id="bossName"></span></strong>.</p>
-	<p>Votre ennemi possède <span id="bossStrenght">0</span> de force et <span id="bossLife">0</span> point(s) de vie.</p>
-	<p>Vous possédez <span id="heroStrenght">0</span> de force et <span id="heroLife">0</span> point(s) de vie.</p>
-	<p><button id="btnAtk">Attaquer</button></p>
-	<div id="console"></div>
+	<div id="jeu">
+		<div id="ambiance">
+			<p>Bienvenue dans ce jeu de combat.</p>
+		</div>
+		<div id="versus">
+			<div id="hero">
+				<p><strong><span id="heroName"></span></strong></p>
+				<p>Points de vie : <span id="heroLife">0</span></p>
+				<p>Force : <span id="heroStrenght">0</span></p>
+			</div>
+			<div id="vide"></div>
+			<div id="boss">
+				<p><strong><span id="bossName"></span></strong></p>
+				<p>Points de vie : <span id="bossLife">0</span></p>
+				<p>Force : <span id="bossStrenght">0</span></p>
+			</div>
+		</div>
+		<div id="console"></div>
+		<p><button id="btnAtk">Attaquer</button></p>
+	</div>
 
 	<script src="jquery-3.3.1.js"></script>
 	<script src="jdr.js"></script>
