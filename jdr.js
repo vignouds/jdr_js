@@ -23,6 +23,11 @@ Hero.fight = function(target){
 	heroAtkText = "Vous attaquez " + target.name + " et lui infligez " + this.strenght + " point(s) de dégats.";
 };
 
+Hero.heal = function(){
+	this.life = this.life+=1;
+	heroHealText = "Vous vous soignez et récupérez 1 point de vie."
+}
+
 //"Sous-classe" Boss
 var Boss = Object.create(Character);
 
@@ -85,6 +90,34 @@ $(function(){
 					}
 		}							
 	});
+
+	$('#btnHeal').click(function(){
+		if ((hero1.life <= 0) || (boss1.life <= 0))
+		{
+			$('#console').text("Le jeu est terminé.");
+		}
+		else
+		{
+			if ((hero1.life + 1) > boss1.strenght) 
+			{
+					hero1.heal();
+					boss1.fight(hero1);
+					$('#console').text(heroHealText);
+					$('#console').append('<br>' + bossAtkText);
+					$('#bossLife').text(boss1.life);
+					$('#heroLife').text(hero1.life);
+			}
+			else
+				{
+					hero1.heal();
+					boss1.fight(hero1);
+					$('#bossLife').text(boss1.life);
+					$('#heroLife').text(hero1.life);
+					$('#console').text("Vous êtes mort !")
+					}
+		}
+	});
+	
 });
 
 
