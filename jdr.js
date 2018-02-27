@@ -43,6 +43,10 @@ hero1.initCharacter("Aventurier", 20, 2);
 var boss1 = Object.create(Boss);
 boss1.initCharacter ("Un Lapin Adulte", 10, 1);
 
+// Teste level 2
+function lvl2(){
+	console.log("eeeeeeeee !!!");
+}
 // Code Jquery : 
 
 $(function(){
@@ -78,6 +82,7 @@ $(function(){
 					$('#bossLife').text(boss1.life);
 					$('#heroLife').text(hero1.life);
 					$('#console').text(boss1.name + " est mort. Vous avez gagné !");
+					$('#jeu').append("<a onclick='lvl2()'>Passez au niveau suivant</a>");
 				}	
 			}
 			else
